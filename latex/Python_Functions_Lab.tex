@@ -1,0 +1,267 @@
+\documentclass[]{article}
+\usepackage{listings}
+\usepackage{testphys}
+\usepackage{amsmath}
+\usepackage{parskip}
+\usepackage{graphicx}
+
+\font\btt=rm-lmtk10
+\usepackage{color}
+ 
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+ 
+\lstdefinestyle{texstyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen}\itshape\small,
+    keywordstyle=\color{black}\btt,
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\small,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+    language=Python
+}
+\lstset{style=texstyle}
+
+\renewcommand{\_}{\char`_}
+\newcommand{\bs}{\symbol{92}}
+
+\begin{document}
+
+\pagestyle{empty}
+
+\noindent
+{\Large\bf PHY 365}
+\vspace{4pt}
+
+\noindent
+{\Large\bf Creating Functions} \hfill {\large Name:} \hrulefill
+\vspace{6pt}
+
+%\noindent
+%{\Large\bf Do your best!}
+\vspace{11pt}
+
+\noindent This is a quick Python refresher for developing functions. Thanks to SoftwareCarpentry for the tutorial structure. 
+
+\medskip\hrule
+
+\medskip
+Before we get started with today's project: 
+\begin{enumerate}
+\item Make sure that SolarSystem is mounted on the Mac. Remember: \texttt{Finder->Go->Connect to Server. }
+\item Load \textit{Spyder}. In the upper right corner, you should see a black ``open folder'' icon. Click that. Navigate using Finder to your home directory on SolarSystem (If this makes no sense as an instruction, ask!) and select ``Open''. This will set your working directory to your home directory. If you did this right, you should see the directory that you are in as \texttt{\bs Volumes\bs home}.   
+\end{enumerate}
+
+\section{What is a function?}
+
+A basic Python function is functionally (pun intended) the same as a mathematical function; that is, it takes some kind of input and gives some kind of output. Here is an example of the most basic function, the test program ``Hello World''. 
+\begin{lstlisting}
+def hello():
+    print('Hello World!')
+\end{lstlisting}
+Before we use this function, let's break it down. 
+\begin{itemize}
+\item \texttt{def} is the command to begin the \textbf{def}inition a function. 
+\item \texttt{hello()} is the name of the function and the list of inputs into the function. Since this function takes no inputs, the parentheses are empty. 
+\item \texttt{:} A colon is necessary to start the function. Its purpose is almost grammatically literal! You can read the function in English like this:\\[1ex] 
+This is the definition of a function named hello that requires no inputs: \\
+print the string 'hello world'
+
+\item \texttt{spaces} all functions are indented by 4 spaces. This is how Python knows what is inside the function and what is not inside the function. The console will interpret the colon immediately, and continue automatically with the symbol `\texttt{...:}', but you still have to indent. If you are writing a script, you need to provide indents yourself too. 
+\end{itemize}
+
+How do you run this function? In the console, type: 
+\begin{lstlisting}
+def hello():
+    print('Hello World!')
+
+hello()
+\end{lstlisting}
+Always leave a blank line after the definition. The interpreter knows that this indicates the end of a function. When you call the function, don't forget the parentheses, otherwise python will think you're talking about a variable named \texttt{hello}.
+
+\newpage
+
+\subsection{Parameters}
+
+Consider the mathematical function $$f(x,y) = 2y-x$$ This function has two parameters, $x$ and $y$. If I were to say that $x=3$ and $y=4$, then we could write: 
+\begin{align*}
+f(x,y) &= 2y-x\\
+f(3,4) &= 2(4)-3\\
+&=5
+\end{align*}
+In Python, the \textit{parameters} 3 and 4 are said to be \textit{passed} into the function. Parameters don't have to be numbers. They can also be strings, lists, NumPy arrays, etc. Look at this function: 
+\begin{lstlisting}
+def print_date(year, month, day):
+    joined = str(year) + '/' + str(month) + '/' + str(day)
+    print(joined)
+
+print_date(1871, 3, 19)
+\end{lstlisting}
+What is the output of this function? What if you change the order of the numbers in the function call? Is order of inputs important? Try \texttt{print\_ date(month=3, day=19, year=1871)} for fun! 
+
+\medskip\makebox[0.96\textwidth]{\hrulefill}
+
+\medskip\makebox[0.96\textwidth]{\hrulefill}
+
+\medskip\makebox[0.96\textwidth]{\hrulefill}
+
+\subsection{Function Returns}
+
+All functions \textit{return} a value. The two previous examples simply print a statement, and are done; but they still return something. In these cases, they return the value \texttt{None}, which is exactly what it sounds like. This can create super subtle bugs in your code:
+\begin{lstlisting}
+result = print_date(1871, 3, 19)
+print('result of call is:', result)
+\end{lstlisting}
+What is going on here? Hint: What is \texttt{result}? 
+
+\medskip\makebox[0.96\textwidth]{\hrulefill}
+
+\medskip\makebox[0.96\textwidth]{\hrulefill}
+
+\medskip\makebox[0.96\textwidth]{\hrulefill}
+
+For a function to return a value, we need to explicitly tell it to, using the \texttt{return} statement. The following program takes in a \textit{list} as a parameter and returns the average value of the list's elements. 
+\begin{lstlisting}
+def average(values):
+    if len(values) == 0:
+        return None
+    return sum(values) / len(values)
+
+average([1,2,3])
+average([])
+average(1,2,3)
+\end{lstlisting}
+Explain what happens when you run the function with those inputs. 
+
+\medskip\makebox[0.96\textwidth]{\hrulefill}
+
+\medskip\makebox[0.96\textwidth]{\hrulefill}
+
+\medskip\makebox[0.96\textwidth]{\hrulefill}
+
+
+\section{Documentation}
+When you create a function, you should always ad in a description of what the function does. This is not just good programming practice, it's incredibly helpful when you put a block of code on the side for a few months and then come back to it\dots and forget what it was supposed to do. 
+
+There are two kinds of documentations. A comment is a short snippet of text to clarify a bit of code. It is always separated from the code by a hashtag: \texttt{\#}. Comments can appear anywhere in the code, and are ignored by the interpreter. 
+\begin{lstlisting}
+def average(values):
+    if len(values) == 0: # This captures empty strings to prevent errors
+        return None # Probably needs a better error message?
+    return sum(values) / len(values)
+
+average([1,2,3])
+average([])
+average(1,2,3)
+\end{lstlisting}
+
+A \textit{docstring} is separated from the code by three quotes (single or double): \texttt{"""}. In a function, a docstring can be used as the "help menu" for the function. Try it! 
+\begin{lstlisting}
+def std_dev(sample):
+    """
+    This function takes in a list or array of numbers and finds the standard 
+    deviation of the list.
+    """ 
+    sample_sum = 0
+    for value in sample:
+        sample_sum += value
+
+    sample_mean = sample_sum / len(sample)
+
+    sum_squared_devs = 0
+    for value in sample:
+        sum_squared_devs += (value - sample_mean) * (value - sample_mean)
+
+    return numpy.sqrt(sum_squared_devs / (len(sample) - 1))
+
+data = [2,4,7,6,9,3,4,2,5,3,6]
+
+help(std_dev)
+
+print(std_dev(data))
+\end{lstlisting}
+
+\newpage
+
+\section{Questions}
+
+\bbq
+\bq
+Using what you know, fill in the blanks to create a function that takes a list of numbers as an argument and returns the first negative value in the list. What does your function do if the list is empty? What should it do?\eq
+\begin{lstlisting}
+def first_negative(values):
+    for v in ____:
+        if ____:
+            return ____
+\end{lstlisting}
+
+\bq 
+The code below will run on a label-printer for chicken eggs. A digital scale will report a chicken egg mass (in grams) to the computer and then the computer will print a label.
+\begin{lstlisting}
+ import random
+ for i in range(10):
+
+    # simulating the mass of a chicken egg
+    # the (random) mass will be 70 +/- 20 grams
+    mass=70+20.0*(2.0*random.random()-1.0)
+
+    print(mass)
+   
+    #egg sizing machinery prints a label
+    if(mass>=85):
+       label='jumbo'
+    elif(mass>=70):
+       label='large'
+    elif(mass<70 and mass>=55):
+       label='medium'
+    else:
+       label='small'
+    
+    print(label)
+
+\end{lstlisting}
+Create a function definition for \texttt{print\_egg\_label()} that will simplify the program above so that it looks like this: 
+\begin{lstlisting}
+ # revised version
+ import random
+ for i in range(10):
+
+    # simulating the mass of a chicken egg
+    # the (random) mass will be 70 +/- 20 grams
+    mass=70+20.0*(2.0*random.random()-1.0)
+
+    print('Mass={}g, this egg is {}'.format(mass,print_egg_label(mass))   
+\end{lstlisting}
+An oversize egg will have a mass of more than 91 grams, and a spoiled or broken egg will probably have a mass that’s less than 50 grams. Modify your \texttt{print\_egg\_label()} function to account for these error conditions.\eq
+
+\newpage
+
+\bq The function known as the \textit{logistic map} has many interesting solutions. We will investigate this function later in class, but it's fun to play with. The logistic map is given by: 
+\begin{equation*}
+x_{n+1} = \mu x_n(1-x_n)
+\end{equation*}
+For a given value of $\mu\in (0,4)$, you start with any value of $x_n\in (0,1)$, and solve for $x_{n+1}$. This value of $x_{n+1}$ becomes the new value of $x_n$ and the process is repeated. After many iterations, there are one of three outcomes: 
+\begin{enumerate}
+\item The value settles down to a single fixed number and does not change. This is called a \textit{fixed point}. 
+\item The value bounces periodically between a finite number of values, say two or four. This is called a \textit{limit cycle}. 
+\item The value does not repeat, running through a seemingly random set of numbers. This is \textit{deterministic chaos}---the numbers look ``chaotic'' and random, but they are clearly predictable from the equation. 
+\end{enumerate}
+Write a function that will iterate the logistic map for a thousand steps given $\mu=2$ and some initial value $x_1$, and plot the results. The plot should be properly labeled as ``Index'' on the horizontal and ``$x$'' on the vertical. Find some values of $x_1$ that lead to fixed points, limit cycles and chaos. 
+
+
+
+\eq
+\eeq
+\end{document}

@@ -1,0 +1,273 @@
+\documentclass[]{article}
+\usepackage{listings}
+\usepackage{testphys}
+\usepackage{amsmath}
+\usepackage{parskip}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{bm}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+
+\font\btt=rm-lmtk10
+\usepackage{color}
+ 
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+ 
+\lstdefinestyle{texstyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen}\itshape\small,
+    keywordstyle=\color{black}\btt,
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\small,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+    language=Python
+}
+\lstset{style=texstyle}
+
+\sisetup{per-mode=symbol}
+
+%%%% NEW MATH SYMBOLS %%%%
+
+\DeclareMathOperator{\erf}{erf}
+\DeclareMathOperator{\erfc}{erfc}
+
+\newcommand\mat[1]{\ensuremath\mathsf{#1}}
+\def\del{\nabla}
+
+\renewcommand{\vec}[1]{%
+	\if#1\relax\bm{#1}\else\mathbf{#1}\fi
+}
+
+% For augmented matrices
+\newenvironment{amatrix}[1]{%
+  \left(\begin{array}{@{}*{#1}{c}|c@{}}
+}{%
+  \end{array}\right)
+}
+
+%For circled numbers
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+
+\newcommand{\unitvec}[1]{\boldsymbol\hat{\bm{#1}}}
+
+\newcommand{\ihat}{\,\unitvec{\imath}}
+\newcommand{\jhat}{\,\unitvec{\jmath}}
+\newcommand{\khat}{\,\hat{\rule{0ex}{1.5ex}\bm{k}}}
+
+\renewcommand{\div}[1]{\del\cdot #1}
+\newcommand{\curl}[1]{\del\times #1}
+\newcommand{\grad}[1]{\del #1}
+
+%
+% Various Helper Commands
+%
+
+% Useful for algorithms
+\newcommand{\alg}[1]{\textsc{\bfseries \footnotesize #1}}
+
+% For derivative operator
+\newcommand{\deriv}[3][]{\frac{\mathrm{d^{#1}}#2}{\mathrm{d}#3^{#1}}}
+\newcommand{\dderiv}[3][]{\dfrac{\mathrm{d^{#1}}#2}{\mathrm{d}#3^{#1}}}
+
+% For partial derivative operator
+\newcommand{\pderiv}[3][]{\frac{\partial^{#1} #2}{\partial #3^{#1}}}
+\newcommand{\dpderiv}[3][]{\dfrac{\partial^{#1} #2}{\partial #3^{#1}}}
+
+% Integrals
+\newcommand\dint{\displaystyle\mathlarger{\int}}
+\newcommand{\dx}{\,\mathrm{d}x}
+\renewcommand{\d}{\mathrm{d}}
+
+% Alias for the Solution section header
+\newcommand{\solution}{\vspace{12pt}\textbf{\large Solution}\vspace{12pt}}
+\renewcommand{\part}[1][]{%
+\ifthenelse{\equal{#1}{}}{\vspace{12pt}\textbf{\large Part \alph{partCounter}} \vspace{12pt} \stepcounter{partCounter}}{\vspace{12pt}\textbf{\large #1} \vspace{12pt} \stepcounter{partCounter}}%
+}
+
+% Probability commands: Expectation, Variance, Covariance, Bias
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\Bias}{\mathrm{Bias}}
+
+%%%% BETTER LOOKING DOTS %%%%
+
+\renewcommand{\dot}[1]{\overset{\bm{.}}{#1}{}}
+\renewcommand{\ddot}[1]{\overset{\bm{..}}{#1}{}}
+
+
+\renewcommand{\_}{\char`_}
+\newcommand{\bs}{\symbol{92}}
+
+\begin{document}
+
+\pagestyle{empty}
+
+\noindent
+{\Large\bf PHY 365}
+\vspace{4pt}
+
+\noindent
+{\Large\bf Oscillating Systems} \hfill {\large Name:} \hrulefill
+\vspace{6pt}
+
+%\noindent
+%{\Large\bf Do your best!}
+\vspace{11pt}
+
+\noindent This is an exercise for learning about oscillators. 
+
+\medskip\hrule
+
+\medskip
+Before we get started with today's project: 
+\begin{enumerate}
+\item Make sure that SolarSystem is mounted on the Mac. Remember: \texttt{Finder->Go->Connect to Server. }
+\item Load \textit{Spyder}. In the upper right corner, you should see a black ``open folder'' icon. Click that. Navigate using Finder to your home directory on SolarSystem (If this makes no sense as an instruction, ask!) and select ``Open''. This will set your working directory to your home directory. If you did this right, you should see the directory that you are in as \texttt{\bs Volumes\bs home}.   
+\end{enumerate}
+
+\section{Simple Harmonic Motion}
+
+The simplest oscillatory motion is a 1-D Hooke's law model, which has the differential equation: 
+\begin{align*}
+\ddot{x} = -\omega_0^2x
+\end{align*}
+Here, $\omega_0=\sqrt{k/m}$ is the natural frequency of the oscillation, based on the spring constant $k$, a measure of the amount of force required to strain the system by a given distance. This model can be used for simple ``mass on spring'' systems, pendulums with small oscillations, or elastic material stress and strain. This is a second-order DE, so we need to use our RK4 integrator with 2 equations: 
+\begin{lstlisting}
+def f(r,t):
+    x = r[0]                   
+    v = r[1]
+    k = 100                     # The spring constant in N/m 
+    m = 3                       # The mass in kg
+    omega = np.sqrt(k/m)        # The natural frequency in 1/s                 
+    dx = v                      
+    dv = -omega**2*x                     
+    return np.array([dx,dv])    # Return array of values
+\end{lstlisting}
+
+\subsection{To do}
+\bbq
+\bq Run your RK4 integrator with this equation and an initial condition of $x_0=\SI{1}{\meter}$ and $v_0=\SI{0}{\meter\per\second}$. Vary the spring constant or mass or both with these initial conditions and plot $x$ vs.\ $t$ and $v$ vs.\ $t$. all on one plot. What does this look like? 
+
+\medskip\makebox[0.96\textwidth]{\hrulefill}
+
+\medskip\makebox[0.96\textwidth]{\hrulefill}
+
+\medskip\makebox[0.96\textwidth]{\hrulefill}
+\eq
+
+\bq Plot $x$ vs\ $v$ for the above systems. This is a mapping of \textit{phase space}, i.e.\ how the momentum of the system varies with the position. What is plotted? Why does it look like this?
+
+\medskip\makebox[0.96\textwidth]{\hrulefill}
+
+\medskip\makebox[0.96\textwidth]{\hrulefill}
+
+\medskip\makebox[0.96\textwidth]{\hrulefill}
+\eq
+
+
+\eeq
+
+\newpage
+
+\section{Damped Harmonic Motion}
+
+Most real oscillating systems are not ideal oscillators, there is some kind of energy loss. We model this with a velocity-dependent damping term, so our differential equation takes the following form:  
+\begin{align*}
+\ddot{x} + 2\beta\dot{x}+\omega_0^2x=0
+\end{align*}
+The value of the damping term determines the kind of damping that the system experiences. The $\beta$ coefficient is measured in \si{\per\second} a rate of velocity change in the system. There are three possible solutions to this system: underdamped $\beta<\omega_0$, overdamped $\beta>\omega_0$, and critically damped $\beta=\omega_0$. 
+
+\subsection{To do}
+\bbq
+\bq Modify the input function to your integrator to include a factor of $\beta$.  
+\eq
+
+\bq Choose some reasonable initial conditions. and some values of $\beta$ for all three types of solution. Plot $x$ vs.\ $t$ and $v$ vs.\ $t$ and $x$ vs\ $v$ for the systems. What is plotted? Why do they look like this?
+
+\medskip\makebox[0.96\textwidth]{\hrulefill}
+
+\medskip\makebox[0.96\textwidth]{\hrulefill}
+
+\medskip\makebox[0.96\textwidth]{\hrulefill}
+\eq
+\eeq
+
+\section{Nonlinear Oscillators}
+
+The general solution for the pendulum is not linear in the dependent variable. For the pendulum, $\omega_0=\sqrt{g/\ell}$. 
+\begin{align*}
+\ddot{\theta} +2\beta\dot{\theta} +\omega_0^2 \sin \theta = 0
+\end{align*}
+This small change radically alters the phase space for the problem if the initial angles are large. You will need to use \texttt{np.radians()} to convert initial conditions to radians before inserting them into the sine function. 
+
+\subsection{To do}
+\bbq
+\bq Modify the input function to your integrator to include the nonlinear term and for a pendulum. 
+\eq
+
+\bq Play around with different initial conditions, both position and velocity. Modify the values of $\beta$ and $\ell$. Can you explain physically what the plots for $x$ vs.\ $t$ and $v$ vs.\ $t$ and $x$ vs\ $v$ mean? Use the back of the page for more explanation. 
+
+\medskip\makebox[0.96\textwidth]{\hrulefill}
+
+\medskip\makebox[0.96\textwidth]{\hrulefill}
+
+\medskip\makebox[0.96\textwidth]{\hrulefill}
+
+\medskip\makebox[0.96\textwidth]{\hrulefill}
+
+\medskip\makebox[0.96\textwidth]{\hrulefill}
+
+\medskip\makebox[0.96\textwidth]{\hrulefill}
+
+\eq
+\eeq
+
+\end{document}
+
+\newpage
+
+\section{Assignments}
+
+\subsection{In Lab Today: Code Development}
+
+Bob has a collection of game balls of various radii, $r=\SI{2}{\centi\meter}$, \SI{5}{\centi\meter}, \SI{10}{\centi\meter}, \SI{15}{\centi\meter}, and \SI{20}{\centi\meter}. He tosses each one straight up into the air at \SI{10.0}{\meter\per\second}. There is air resistance, and for a sphere we'll choose $C=0.5$.  Let's assume the density of the ball material is $\rho_{\mathrm{Ball}} = \SI{96.7}{\kilo\gram\per\cubic\meter}$. 
+
+\begin{enumerate}
+\item Using your integrator, plot the position vs. time for each of these flying balls on one plot. Your plot should be set so that the lower left corner represents $(0,0)$ and the axes should be labeled. There should be a legend as well. 
+\item Using your integrator, plot the velocity vs. time for each of these flying balls on one plot. Your plot axes range should be set so that all of the velocity data is visible. There should be a legend. 
+\item For both of the plots above, also include a case where there is no air resistance for comparison. Does this match your expectations? 
+\end{enumerate}
+
+\subsection{Homework}
+
+Due by 11:59 PM on 16 October 2019
+
+This assignment is just one program. It should be turned in as \texttt{LastName\_Air\_Resistance.py}. 
+
+Bob has a collection of game balls of various radii, $r=\SI{2}{\centi\meter}$, \SI{5}{\centi\meter}, \SI{10}{\centi\meter}, \SI{15}{\centi\meter}, and \SI{20}{\centi\meter}. He tosses each one into the air at \SI{10.0}{\meter\per\second} at an angle of $\theta=\SI{30}{\degree}$ from a cliff face \SI{5}{\meter} high. There is air resistance, and for a sphere we'll choose $C=0.5$.  Let's assume the density of the ball material is $\rho_{\mathrm{Ball}} = \SI{96.7}{\kilo\gram\per\cubic\meter}$. 
+
+\begin{enumerate}
+\item Using your integrator, plot the 2-D position $x$ vs\ $y$ for each of these flying balls on one plot. Your plot should be set so that the lower left corner represents $(0,0)$ and the axes should be labeled. There should be a legend as well. 
+\item Using your integrator, plot the 2-D velocity $v_x$ vs.\ $v_y$ for each of these flying balls on one plot. Your plot axes range should be set so that all of the velocity data is visible. There should be a legend. 
+\item For both of the plots above, also include a case where there is no air resistance for comparison. Does this match your expectations? 
+\end{enumerate}
+
+
+\end{document}
+
