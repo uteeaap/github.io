@@ -71,20 +71,22 @@
 	 </div>
      </div><!-- row --> 
     </div><!-- container -->
-	    <script>
-		    
-		var container = document.querySelector("#resources");
-var matches = container.querySelectorAll("li[data-active='1']");    
-	    </script>
 	    
+<script>
+var container = document.querySelector("#resources");
+var matches = container.querySelectorAll("li[data-active='1']"); 
+var select = document.querySelector('.select');
+var inner = select.querySelectorAll('.outer .inner');
+inner.length; // 1, not 0!
+</script>
 	    
-	    
-<div class="container add25">
- <div class="row">
-  <div class="col-md-12" id="displayresource"> 
-	  </div>
-	 </div>
-	    </div>  
+<div class="container add25 outer yellowhighlight">
+<div class="row select">
+<div class="col-md-12 inner" id="displayresource"> 
+	
+</div>
+</div>
+</div>  
 		
 <div class="container add25">
  <div class="row">
