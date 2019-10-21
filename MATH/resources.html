@@ -68,17 +68,30 @@
 	</div>
 	<div class="col-md-6">
          <h3>Resources</h3>
-
 	 </div>
      </div><!-- row --> 
     </div><!-- container -->
+	    <script>
+		    
+		var container = document.querySelector("#resources");
+var matches = container.querySelectorAll("li[data-active='1']");    
+	    </script>
+	    
+	    
+	    
+<div class="container add25">
+ <div class="row">
+  <div class="col-md-12" id="displayresource"> 
+	  </div>
+	 </div>
+	    </div>  
 		
 <div class="container add25">
  <div class="row">
-  <div class="col-md-12"> 
+  <div class="col-md-12" id="resources"> 
 <button type="button" name="braille blaster" class="btn btn-dark wide300">BrailleBlaster</button>
 	<ul class="add25">
-	<li>
+	<li data-active="1">
 	<a href="https://www.youtube.com/watch?v=AJEbIoO_ybg">Introduction to BrailleBlaster</a>
 	<p tabindex="0">As accessed 21 October 2019</p>
 	</li>
