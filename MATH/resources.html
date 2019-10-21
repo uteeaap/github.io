@@ -73,17 +73,12 @@
     </div><!-- container -->
 	    
 <script>
-var container = document.querySelector("#resources");
-var matches = container.querySelectorAll("li[data-active='1']"); 
-var select = document.querySelector('.select');
-var inner = select.querySelectorAll('.outer .inner');
 document.getElementById("displaylist").innerHTML = 5 + 6;
-inner.length; // 1, not 0!
 </script>
 	    
-<div class="container add25 outer yellowhighlight">
-<div class="row select">
-<div class="col-md-12 inner" id="displaylist"> 
+<div class="container add25 yellowhighlight">
+<div class="row">
+<div class="col-md-12" id="displaylist"> 
 	
 </div>
 </div>
@@ -114,6 +109,7 @@ inner.length; // 1, not 0!
 	<li>Example: <a href="https://www.mathway.com/BasicMath">Interactive page with chat</a></li>
 	</ul>
   <button type="button" name="purple math" class="btn btn-dark wide300">Purple Math</button>
+	    <p tabindex="0" class="add25"><span style="font-weight:bold;">Why it's good for students:</span>  Provides worked examples</p> 
 	<ul class="add25">
 	<li><a href="https://www.purplemath.com/modules/index.htm">Home Page</a></li>
 	<li>Example Lesson: <a href="https://www.purplemath.com/modules/distform2.htm">The Distance Forumla: Worked Examples</a></li>
