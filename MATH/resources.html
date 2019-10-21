@@ -43,7 +43,7 @@
     </nav> 
    			  
    <main>
-    <article> 
+    <article id="resources"> 
 	<div class="row darkgray">
 	<div class="container add25">
 	<div class="col text-center" id="main">
@@ -81,6 +81,11 @@
 </div>  
 <script>
 document.getElementById("demo").innerHTML = "My First JavaScript";
+const article = document.querySelector('#resources');
+ 
+article.dataset.columns // "3"
+article.dataset.indexNumber // "12314"
+article.dataset.parent // "cars"
 </script>
 	   		
 <div class="container add25">
