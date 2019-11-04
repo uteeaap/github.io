@@ -1,0 +1,237 @@
+body {
+background-color: white;
+font-size: 16px;
+color: #737373;
+/* color: #3d3c35; */
+  /* shades of dove gray #bebcb3  https://www.colorhexa.com/bebcb3 */
+}
+h1,h2,h3,h4,h5,h6 {
+padding-bottom: 10px;
+}
+figure {
+padding-bottom:15px;
+}
+.add25 {
+margin-top:25px;
+margin-bottom:25px;  
+}
+.add50 {
+margin-top:50px;
+margin-bottom:50px;
+}
+.wide300 {
+width: 300px;
+}
+/* Pebble theme 433E49 / 928490 / DBC1AD / F3E8EB */
+.darkgray {
+color: #737373;
+/* color: darkgray; */
+border-bottom:solid 5px #A9A9A9;
+margin-bottom:25px;
+}
+.mediumgray {
+background-color: #928490;
+color: white;
+}
+.darkbeige {
+background-color: #DBC1AD;
+color: #433E49;
+}
+.mauve {
+background-color: #F3E8EB;
+color: #433E49;
+}
+.mauvetop {
+border-top: #F3E8EB solid 3px;
+}
+/* end Pebble theme start on derivatives for the theme */
+.blackbackground {
+background-color:black;
+color:white;
+}
+.yellowbackground {
+background-color: #FFFFE0;
+border-radius:solid 10px #FFFFE0;
+}
+.beigebox {
+background-color: #DBC1AD;
+color: #433E49;
+border-radius:10px solid #DBC1AD;
+padding:15px;
+}
+/* end Pebble theme color gray boxes */
+/* blockquote is not indented or otherwise distinguishable */
+.quoted {
+margin:15px;
+padding:15px;
+color: #1a1a1a;
+background-color:#f3e8e8;
+border-radius:solid 10px #f3e8e8
+}
+.quotedsource {
+margin:15px;
+padding:15px;
+}
+.yellowhighlight {
+margin:15px;
+padding:15px;
+background-color: #FFFFE0;
+border-radius:solid 10px #FFFFE0;
+}
+.whitehighlight {
+margin:15px;
+padding:15px;
+background-color: white;
+border-radius:solid 10px #FFFFE0;
+}
+/* default links assuming white or light body */
+a:active {
+  color: #b00124;
+    /* darker relation to color: #d0012b; for AAA contrast standard */
+}
+/* visited link */
+ a:visited {
+    color: #b00124;
+  /* darker relation to color: #d0012b; for AAA contrast standard */
+}
+/* selected link */
+ a:selected {
+    color: #b00124;
+    /* darker relation to color: #d0012b; for AAA contrast standard */
+  }
+a:link {
+  text-decoration:underline;
+}
+/* mouse over link */
+ a:hover {
+    color: black;
+    background-color: #FFFFE0;
+    text-decoration:underline;
+}
+.tampa {
+background-color:#f3e8e8;
+}
+
+/* background for light colored Tampa TampaFranklinStreetNorthLight.jpg */
+.oldtampa {
+  background-image: url("../BACKGROUND/TampaFranklinStreetNorthWeb8Colors.gif");
+  /* assumes default white in case image does not appear */
+  /* Full height */
+  height: 100%;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/* link menu based on UT site class tags-nav for audience familiarity */
+/* Be sure to keep this css near top */
+ol.horizontal, ul.horizontal {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: block;
+  margin: 0;
+  padding: 0;
+  list-style: none; 
+}
+ ol.horizontal li, ul.horizontal li {
+    font-size:16px;
+    display: inline; 
+}
+ ol.horizontal a, ul.horizontal a {
+    font-size:16px;
+    display: inline-block; 
+}
+/* 27 Nov 2018 added UT menu styling for audience familiarity in workshops */
+ul.utility {
+  float: right;
+}
+  ul.utility a {
+    font-weight: 700;
+    color: #595959;
+    padding: 0.75em;
+    border-bottom: 4px solid white;
+}
+  ul.utility a:visited {
+    font-weight: 700;
+    color: #595959;
+    padding: 0.75em;
+    border-bottom: 4px solid white;
+}
+  ul.utility a:hover, ul.utility a:focus {
+    text-decoration:none;
+    font-weight: 700;
+    color: black;
+    padding: 0.75em;
+    border-bottom: 4px solid #d0112b;
+}
+/* utilityleft added 15 April 2019 */
+ul.utilityleft {
+   margin-top:25px;
+  /* for submenus within page content e.g. page on tables */
+}
+ol.utilityleft  li, ul.utilityleft li {
+   font-size:16px;
+   margin-bottom: 0.5em;
+}
+  ul.utilityleft a {
+    font-weight: 700;
+    color: #595959;
+    padding: 0.75em;
+    border-left: 4px solid black;
+}
+  ul.utilityleft a:visited {
+    font-weight: 700;
+    color: #595959;
+    padding: 0.75em;
+    border-left: 4px solid black;
+}
+  ul.utilityleft a:hover, ul.utilityleft a:focus {
+    text-decoration:none;
+    font-weight: 700;
+    color: black;
+    padding: 0.75em;
+    border-left: 4px solid #d0112b;
+}
+/* end for familiar looking menu be sure to keep this near top */
+
+/* utilityleftblack added 30 August 2019 */
+ul.utilityleftblack  {
+   margin-top:25px;
+  /* for submenus within page content e.g. page on tables */
+}
+ol.utilityleftblack   li, ul.utilityleftblack  li {
+   font-size:16px;
+   margin-bottom: 0.5em;
+}
+  ul.utilityleftblack  a {
+    font-weight: 700;
+    color: white;
+    padding: 0.75em;
+    border-left: 4px solid white;
+}
+  ul.utilityleftblack  a:visited {
+    font-weight: 700;
+    color: white;
+    padding: 0.75em;
+    border-left: 4px solid white;
+}
+  ul.utilityleftblack  a:hover, ul.utilityleftblack  a:focus {
+    text-decoration:none;
+    font-weight: 700;
+    color: black;
+    padding: 0.75em;
+    border-left: 4px solid #d0112b;
+}
+/* end for familiar looking menu be sure to keep this near top */
+li {
+   list-style:none;
+   font-size: 15px;
+}
+table, th, td {
+   border: 1px solid #A9A9A9;
+}
+th, td {
+  padding: 15px;
+  text-align: left;
+}
