@@ -93,8 +93,19 @@
 <div class="row">
 	<div class="col-md-12">
 		<h4>Displaying a Carbonate Ion with mhchem</h4>
-		<p tabindex="0"><pre><code>{}_{(aq)}</code></pre></p>
-		
+		<p tabindex="0" class="quoted">You can use <pre><code>{}_{(aq)}</code></pre></p>
+	        <p tabindex="0" class="quoted">You can use <pre><code>\documentclass{article}
+\usepackage[version=3]{mhchem}
+\begin{document}
+  \noindent IUPAC recommendation:\\
+  \ce{2H+(aq) + CO3^{2-}(aq) -> CO2(g) + H2O(l)}
+
+  \bigskip
+
+  \noindent Subscript:\\
+  \ce{2H+{}_{(aq)} + CO3^{2-}{}_{(aq)} -> CO2{}_{(g)} + H2O{}_{(l)}}
+\end{document}</code></pre></p>
+	<p tabindex="0" class="quotedsource"><a href="https://tex.stackexchange.com/questions/228785/displaying-a-carbonate-ion-with-mhchem">Displaying a Carbonate Ion with mhchem</a></p>
 		
 	</div></div></div>
 
