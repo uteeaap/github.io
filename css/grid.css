@@ -77,9 +77,7 @@
     }
   }
 }
-
 /* https://css-tricks.com/dont-overthink-flexbox-grids/ */
-
 * {
   box-sizing: border-box;
 }
