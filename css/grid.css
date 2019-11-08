@@ -90,7 +90,14 @@ body {
 .col {
   background: salmon;
   padding: 20px
-}    
+} 
+/* small screens */
+
+@media (max-width: 400px) {
+  .flex-grid {
+    display: block;
+  }
+}
 /* gutters */
 .flex-grid-thirds {
   display: flex;
