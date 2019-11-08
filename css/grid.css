@@ -1,82 +1,3 @@
-/* source Philip Walton https://philipwalton.github.io/solved-by-flexbox/demos/grids/ */
-/* Base classes for all media */
-.Grid--fit > .Grid-cell {
-  flex: 1;
-}
-.Grid--full > .Grid-cell {
-  flex: 0 0 100%;
-}
-.Grid--1of2 > .Grid-cell {
-  flex: 0 0 50%
-}
-.Grid--1of3 > .Grid-cell {
-  flex: 0 0 33.3333%
-}
-.Grid--1of4 > .Grid-cell {
-  flex: 0 0 25%
-}
-
-/* Small to medium screens */
-@media (min-width: 24em) {
-  .small-Grid--fit > .Grid-cell {
-    flex: 1;
-  }
-  .small-Grid--full > .Grid-cell {
-    flex: 0 0 100%;
-  }
-  .small-Grid--1of2 > .Grid-cell {
-    flex: 0 0 50%
-  }
-  .small-Grid--1of3 > .Grid-cell {
-    flex: 0 0 33.3333%
-  }
-  .small-Grid--1of4 > .Grid-cell {
-    flex: 0 0 25%
-  }
-}
-
-/* Large screens */
-@media (min-width: 48em) {
-  .large-Grid--fit > .Grid-cell {
-    flex: 1;
-  }
-  .large-Grid--full > .Grid-cell {
-    flex: 0 0 100%;
-  }
-  .large-Grid--1of2 > .Grid-cell {
-    flex: 0 0 50%
-  }
-  .large-Grid--1of3 > .Grid-cell {
-    flex: 0 0 33.3333%
-  }
-  .large-Grid--1of4 > .Grid-cell {
-    flex: 0 0 25%
-  }
-}
-.flex-grid {
-  display: flex;
-}
-.flex-grid .col {
-  flex: 1;
-}
-.flex-grid-thirds {
-  display: flex;
-  justify-content: space-between;
-}
-.flex-grid-thirds .col {
-  width: 32%;
-}
-
-@media (max-width: 400px) {
-  .flex-grid,
-  .flex-grid-thirds {
-    display: block;
-    .col {
-      width: 100%;
-      margin: 0 0 10px 0;
-    }
-  }
-}
 /* https://css-tricks.com/dont-overthink-flexbox-grids/ */
 * {
   box-sizing: border-box;
@@ -87,7 +8,7 @@ body {
 .flex-grid { 
   margin: 0 0 20px 0;
 }
-.col {
+.fcol {
   background: salmon;
   padding: 20px
 } 
@@ -103,6 +24,6 @@ body {
   display: flex;
   justify-content: space-between;
 }
-.flex-grid-thirds .col {
+.flex-grid-thirds .fcol {
   width: 32%;
 }
