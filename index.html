@@ -158,20 +158,23 @@
 <div class="container add50">
    <div class="row">
      <div class="col-md-12">
-      <label for="indexinput">Search Subjects:</label>
-      <input type="text" id="indexinput" name="indexinput" onkeyup="searchSubjectFunction()"  title="Type in a subject">   
+      <label for="indexinput">Search Departments:</label>
+      <input type="text" id="indexinput" name="indexinput" onkeyup="searchDepartmentFunction()"  title="Department Search"> 
+	     
+      <label for="index2input">Search Notes:</label>
+      <input type="text" id="index2input" name="index2input" onkeyup="searchNotesFunction()"  title="Notes Search"> 
  <table id="indexTable" class="add50">
   <tr class="header">
     <th>Department</th>
     <th>Notes</th>
   </tr>
   <tr>
-    <td>[CAL]<a href="/ART/index.html">Art</a></td>
-    <td>Under Development</td>
+    <td><a href="/ART/index.html">Art</a></td>
+    <td>[CAL] Under Development</td>
   </tr>
   <tr>
-    <td><a href="/MUSEUM/index.html">[CAL] Museum Studies</a></td>
-    <td>Under Development</td>
+    <td><a href="/MUSEUM/index.html">Museum Studies</a></td>
+    <td>[CAL] Under Development</td>
   </tr> 
   <tr>
     <td><a href="/COMMUNICATION/index.html">Communication</a></td>
@@ -218,7 +221,7 @@
     
  <!-- source code courtesy W3C schools https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_filter_table -->
  <script>
-function searchSubjectFunction() {
+function searchDepartmentFunction() {
   var input, filter, table, tr, td, i, txtValue;
   input = document.getElementById("indexinput");
   filter = input.value.toUpperCase();
@@ -226,6 +229,26 @@ function searchSubjectFunction() {
   tr = table.getElementsByTagName("tr");
   for (i = 0; i < tr.length; i++) {
     td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+	 	 
+	 
+function searchNotesFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("index2input");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("indexTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
     if (td) {
       txtValue = td.textContent || td.innerText;
       if (txtValue.toUpperCase().indexOf(filter) > -1) {
@@ -251,7 +274,7 @@ function searchSubjectFunction() {
            <div class="container">
               <p tabindex="0">This Page Last Updated or Reviewed</p>
               <ul>
-                 <li>Content: 7 November 2019</li>
+                 <li>Content: 21 November 2019</li>
                  <li>WebAim: 30 October 2019 0</li>
                  <li>Nu Html Checker Version: 19.9.17: 27 September 2019 0</li>
                  <li>Bootstrap: 4.3.1</li>
