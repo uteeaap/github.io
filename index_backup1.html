@@ -24,6 +24,23 @@
   <meta name="description" content="accessibility, eeaap">	
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="css/main.css">
+<style>
+* {
+  box-sizing: border-box;
+}
+#indexTable th {
+  font-weight: bold;
+  background-color:#8B0000;
+  color: white;
+}
+#indexTable th, #indexTable td {
+  font-weight: bold;
+    border-style: transparent;	
+}	
+</style>	
+	
+	
+	
  </head>
   <body>
    <a class="sr-only sr-only-focusable" href="#main">Skip to main content</a>  
@@ -99,39 +116,156 @@
 	 <div class="col-md-12">
            <button type="button" name="art" class="btn btn-dark wide300">Art</button>
 	     <ul class="add25">	  
-	      <li><a href="/ART/index.html">ART</a></li>
-	       <li><a href="/MUSEUM/index.html">Museum Studies</a></li>
+	      <li><a href="/ART/index.html">ART</a> UNDER DEVELOPMENT needs row col</li>
+	       <li><a href="/MUSEUM/index.html">Museum Studies</a> UNDER DEVELOPMENT</li>
 	     </ul>
 		    
 	     <button type="button" name="art" class="btn btn-dark wide300">Chemistry</button>
 	     <ul class="add25">	  
-	      <li><a href="/CHEMISTRY/index.html">Chemistry</a></li>
-	     </ul>	  
+	      <li><a href="/CHEMISTRY/index.html">Chemistry</a> UNDER DEVELOPMENT</li>
+	     </ul>
+		 
+		 
+	     <button type="button" name="communications" class="btn btn-dark wide300">Communications</button>
+	     <ul class="add25">	  
+	      <li><a href="/COMMUNICATION/index.html">Communications</a> UNDER DEVELOPMENT</li>
+	     </ul>	 
 		  
 	   <button type="button" name="geography" class="btn btn-dark wide300">Geography</button>
 	     <ul class="add25">	  
-	      <li><a href="/GEOGRAPHY/index.html">geography</a></li>
-	      <li><a href="/GIS/index.html">GIS</a></li>
+	      <li><a href="/GEOGRAPHY/index.html">geography</a> UNDER DEVELOPMENT</li>
+	      <li><a href="/GIS/index.html">GIS</a> UNDER DEVELOPMENT</li>
 	     </ul>
 		  
             <button type="button" name="math" class="btn btn-dark wide300">Math</button>
 	     <ul class="add25">	  
-	      <li><a href="/MATH/index.html">Math</a></li>
+	      <li><a href="/MATH/index.html">Math</a> UNDER DEVELOPMENT</li>
 	     </ul>
 		  
 		  
           <button type="button" name="music" class="btn btn-dark wide300">Music</button>
 	     <ul class="add25">	  
-	      <li><a href="/MUSIC/index.html">Music</a></li>
+	      <li><a href="/MUSIC/index.html">Music</a>UNDER DEVELOPMENT</li>
 	     </ul>
 	   <button type="button" name="nursing" class="btn btn-dark wide300">Nursing</button>
 	     <ul class="add25">	  
-	      <li><a href="/NURSING/index.html">Nursing</a></li>
+	      <li><a href="/NURSING/index.html">Nursing</a> UNDER DEVELOPMENT</li>
 	     </ul>
 		  
       </div> 
    </div>
 </div>
+	    
+	    
+	 <div class="container add50">
+   <div class="row">
+     <div class="col-md-6">
+      <label for="indexinput">Search Subjects:</label>
+      <input type="text" id="indexinput" name="indexinput" onkeyup="searchSubjectFunction()"  title="Type in a subject">   
+ <table id="indexTable" class="add50">
+  <tr class="header">
+    <th style="width:150px;">Subject</th>
+    <th>Topic</th>
+  </tr>
+  <tr>
+    <td tabindex="0">Art</td>
+    <td><a href="/ART/index.html">Art: Blind Painters</a></td>
+  </tr>
+  <tr>
+    <td tabindex="0">Assets</td>
+    <td><a href="/DISABILITYASSET/index.html">Assets: Disability</a></td>
+  </tr>
+  <tr>
+    <td tabindex="0">ASL</td>
+    <td><a href="/ASL/index.html">Amercian Sign Language (ASL)</a></td>
+  </tr>
+  <tr>
+    <td tabindex="0">Athletics</td>
+    <td><a href="/ATHLETICS/index.html">Athletics: Wheelchair Tennis</a</td>
+  </tr>
+  <tr>
+    <td tabindex="0">Braille</td>
+    <td><a href="/BRAILLE/index.html">Braille</a></td>
+  </tr>
+  <tr>
+    <td tabindex="0">Buisness Models</td>
+    <td><a href="/BUSINESSMODEL/index.html">Business Models</a></td>
+  </tr>
+  <tr>
+    <td tabindex="0">Chemistry</td>
+    <td><a href="/CHEMISTRY/index.html">Chemistry</a></td>
+  </tr>
+  <tr>
+    <td tabindex="0">Dance</td>
+    <td><a href="/DANCE/index.html">Dance</a></td>
+  </tr>
+  <tr>
+    <td tabindex="0">Fashion</td>
+    <td><a href="/FASHION/index.html">Fashion</a></td>
+  </tr>    
+  <tr>
+    <td tabindex="0">Labs</td>
+    <td><a href="/LAB/index.html">Labs</a></td>
+  </tr>	    	
+   <tr>
+    <td tabindex="0">LaTeX</td>
+    <td><a href="/LATEX/index.html">LaTeX</a></td>
+  </tr>	
+  <tr>
+    <td tabindex="0">Math</td>
+    <td><a href="/MATH/index.html">Math</a></td>
+  </tr>
+   <tr>
+    <td tabindex="0">Museum Studies</td>
+    <td><a href="/MUSEUM/index.html">Museum Studies</a></td>
+  </tr>
+   <tr>
+    <td tabindex="0">Music and Song</td>
+    <td><a href="/MUSIC/index.html">Music and Song</a></td>
+  </tr>
+   <tr>
+    <td tabindex="0">Workshops</td>
+    <td><a href="/PROFDEV/index.html">Workshops</a></td>
+  </tr>
+</table>
+    
+ <!-- source code courtesy W3C schools https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_filter_table -->
+ <script>
+function searchSubjectFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("indexinput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("indexTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+
+   </div> 
+   <div class="col-md-6">&nbsp;</div>	            
+  </div>
+</div>    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
 	        
       </article> 
      </main>
@@ -141,7 +275,7 @@
            <div class="container">
               <p tabindex="0">This Page Last Updated or Reviewed</p>
               <ul>
-                 <li>Content: 6 November 2019</li>
+                 <li>Content: 7 November 2019</li>
                  <li>WebAim: 30 October 2019 0</li>
                  <li>Nu Html Checker Version: 19.9.17: 27 September 2019 0</li>
                  <li>Bootstrap: 4.3.1</li>
