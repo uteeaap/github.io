@@ -67,12 +67,24 @@
 	  </nav>
 	</div>
 	<div class="col-md-6">
-	<h3>Harvard Buisness Review</h3>
-		<p tabindex="0" class="quoted">Time after time, we observed that once a manager had decided to make the move and incorporate a blind person into his or her work group, the climate there became a very positive one for the new employee. The failures were always due to factors other than vision limitations, factors that can disrupt any employer-worker relationship. Yet even in those cases, the work group often felt a strong desire to recruit another visually impaired or blind person. They had an investment in the cause.</p>
+	<h3>TBD</h3>
+		<p tabindex="0" class="quoted"></p>
 		<p tabindex="0" class="quotedsource"><a href="https://hbr.org/1989/03/how-technology-brings-blind-people-into-the-workplace">How Technology Brings Blind People into the Workplace</a> as accessed 8 January 2020</p>
 	 </div>
      </div><!-- row --> 
     </div><!-- container -->
+    
+<div class="container add25">
+ <div class="row">
+ <div class="col-md-12">
+ <h4>Sonification</h4>
+
+ </div>
+ </div>
+</div>
+	
+    
+    
 	    
 <div class="container add25">
  <div class="row">
@@ -92,7 +104,7 @@
            <div class="container">
               <p tabindex="0">This Page Last Updated or Reviewed</p>
               <ul>
-		<li>Content: 8 January 2020</li>
+		<li>Content: 28 January 2020</li>
 		<li>WebAim: TBD</li>
 		<li>Nu Html Checker: TBD</li>
 		<li>Bootstrap 4.3.1</li>
