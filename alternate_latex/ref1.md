@@ -14,3 +14,9 @@ professional level, and as needed to develop international signs. ```
 solution, even though our suggestions below may look like a list. Lists limit creativity,
 limit possible new solutions, and may be unintentionally taken as absolute, thereby
 leaving out the very important phase of continuous focus groups and usability testing.```
+```Multimodal Access
+● Provide multiple modes of access to the information contained in journal
+articles. Possibilities include podcasts, presentation slides, and videos to
+complement research articles. Options should be made available for embedding
+varied media formats (audio, video).
+● The format of articles should allow Braille embossing. ```
