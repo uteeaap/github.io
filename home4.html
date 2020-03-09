@@ -146,30 +146,71 @@ require the University to provide equally effective alternative access. </p>
   </div>
 </div>
 
-<div class="container add25">      
- <div class="row">
-  <div class="col-md-12">
-    <h4>Common Solutions | UNDER DEVELOPMENT</h4>
-	  <ul>
-	  
-	  <li>•	Alternative Formats: All disciplines can take advantage of the ability to download alternative formats either through the Learning Management System, or through commonly available applications.  Note: the original file must itself be accessible; an inaccessible original will not be made accessible simply by putting it in another format.</li>
-<li>•	Linking to Accessible Versions:  All disciplines can provide alternative means by providing a link between inaccessible content to an accessible version of it. </li>
-<li>•	Linking to Alternate Means:  All disciplines can provide alternative means by providing a link between inaccessible content and an acceptable alternative that would enable a student with disabilities to obtain the same result, gain the same benefit, or reach the same level of achievement. </li>
-<li>•	Providing Alternate Technology: There are companies that provide technology with the ability to output results in different formats, such as SaaS’s software that will output graphs in an audio format so that the blind may perceive business functions.</li>
-<li>•	Accepting Alternate …..s: For those disciplines for which LaTeX…..not always work in the Learning Management System, so building in administrative support……</li>
-<li>•	Personal ….. read the test out loud</li>
-<li>•	Tactile Means: many complicated images, such as those used in Medicine, are difficult to describe to the blind.  Tactile means of reproduction …..</li>
-<li>•	Repainting in Grayscale: Colors can cause those with certain disabilities confusion, and significant physical and mental discomfort.  Putting the material in grayscale, either through various applications, or simply printing out on a black-and-white printer, addresses the problem.</li>
-<li>•	Graphics Software: For material that is difficult to read due to contrast issues, common graphic editing software can make adjustments so that contrast may be increased, or decreased, as necessary.</li>
-<li>•	Alternate Formats: Quizzes and tests that are on timers but for which the technology or user interface presents problems can simply be given in an alternate format, such as a print-out, without adding extra time to take the test.</li>  
-<li>•	Quiet Rooms: Where the technology is such that it depends on audio input, many common environmental factors will cause the technology to fail.  Allow the student to work in a quiet room with her assistive technology.</li>
-<li>•	Financial Support: A student may only be eligible for only the cheapest version of the technology, which adds significantly to the student’s workload, putting him/her behind the rest of the class. Most students with disabilities are extremely limited in their finances, and are forced to buy the cheapest or free version of a software that serves as assistive technology. </li>  
-	  	  
-	  </ul>
-	    
+<div class="container add50">
+   <div class="row">
+     <div class="col-md-6">
+      <label for="indexinput">Search Terminology:</label>
+      <input type="text" id="indexinput" name="indexinput" onkeyup="searchTerminlogyFunction()"  title="Terminology Search"> 
+       </div>
+      <div class="col-md-6">    
+      <label for="index2input">Search by Colleges or Notes:</label>
+      <input type="text" id="index2input" name="index2input" onkeyup="searchNotesFunction()"  title="Notes Search">
   </div>
- </div>
-</div>
+ <div class="col-md-12">	     
+ <table id="indexTable" class="add50">
+  <tr class="header">
+    <th style="width:40%;">Terminlogy</th>
+    <th style="width:60%;">Notes</th>	  
+  </tr>
+  <tr>
+    <td>False Positive</td>
+    <td><a href="/terminology/index.html">Example</a></td>
+  </tr>
+   
+ 
+</table>
+    
+ <!-- source code courtesy W3C schools https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_filter_table -->
+ <script>
+function searchTerminologyFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("indexinput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("indexTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+	 	 
+	 
+function searchNotesFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("index2input");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("indexTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
 	        
       </article> 
      </main>
@@ -179,7 +220,7 @@ require the University to provide equally effective alternative access. </p>
            <div class="row">
               <p tabindex="0">This Page Last Updated or Reviewed</p>
 		<ul>
-		<li>Content: 7 Feb 2020</li>
+		<li>Content: 9 March 2020</li>
 		<li>WebAim: 30 October 2019 0</li>
 		<li>Nu Html Checker Version: 19.9.17: 27 September 2019 0</li>
 		<li>Bootstrap: 4.3.1</li>
