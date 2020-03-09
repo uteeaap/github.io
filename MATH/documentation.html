@@ -87,7 +87,7 @@
 	</div>
     </div>
 	        
-<div class="container">	    
+<div class="container add50">	    
  <div class="row"> 
    <div class="col-md-12">
     <h4>Documentation Specific to Math: Advanced Math and Braille</h4>  
@@ -108,38 +108,86 @@
      </div><!-- row --> 
     </div><!-- container -->
 	        
-<div class="container">
-	<div class="row">
-		<div class="col-md-12">
-		<h4>Braille, Nemeth Braille</h4>
-		<p tabindex="0" class="quoted">In current Nemeth code transcriptions, the nonmathematical text that surrounds the mathematics is based on English Braille, American Edition (EBAE), which is being replaced by Unified English Braille (UEB). If the surrounding text were to continue to be in EBAE, then, in order to use Nemeth Code, braille users and producers would need to be familiar with two sets of rules for contractions, capitalization, emphasis, punctuation, spacing, and so on. Such a requirement would be especially burdensome in the long term to future braille users and producers who learn braille according to UEB symbols and rules and would then need to learn old rules that have been replaced.</p>
-		<p tabindex="0" class="quoted">As the use of electronic means to read and write in both print and braille proliferates, the need for accurate translation both from print to braille and from braille to print becomes an increasingly critical consideration. An unambiguous switching method eliminates code conflicts and makes it possible for accurate translation in either direction to occur, so that mathematics can be communicated between print users and braille users using Nemeth Code.</p>
-			<p tabinde="0" class="quotedsource">Braille Authority of North America |  <a href="http://brailleauthority.org/mathscience/math-science.html">Guidance for Transcription Using the Nemeth Code within UEB Contexts </a></p>
-		</div>
-	</div>
-    </div>
-	    
-   <div class="container">
-	<div class="row">
-		<div class="col-md-12">
-			<h4>Graphing Calculator Guidelines</h4>
-			<p tabindex="0" class="quoted">BANA's Nemeth Code Technical Committee has worked diligently to develop this new publication—Graphing Calculator Guidelines. It is based on the Nemeth Code and its updates as well as on the Guidance for Transcription Using the Nemeth Code within UEB Contexts. BANA welcomes feedback from users of this publication.</p>
-			<p tabindex="0" class="quotedsource">Approved April 2018</p>
-			<p tabinde="0" class="quotedsource">Braille Authority of North America |  <a href="http://brailleauthority.org/mathscience/math-science.html">Guidance for Transcription Using the Nemeth Code within UEB Contexts </a></p>
-		</div>
-	</div>
-    </div> 
+ <div class="container add25">
+   <div class="row">
+   
+     <div class="col-md-6">
+      <label for="terminologyinput">Search Terminology:</label>
+      <input type="text" id="terminologyinput" name="terminlogyinput" onkeyup="searchTerminologyFunction()"  title="Terminology Search"> 
+       </div>
+      <div class="col-md-6">    
+      <label for="index2input">Search by Notes:</label>
+      <input type="text" id="index2input" name="index2input" onkeyup="searchNotesFunction()"  title="Notes Search">
+  </div>
+ <div class="col-md-12">	     
+ <table id="terminologyTable" class="add50">
+  <tr class="header">
+    <th style="width:40%;">Terminlogy</th>
+    <th style="width:60%;">Notes</th>	  
+  </tr>	 
+  <tr>
+    <td>Accessibility Support: Level of Assistance</td>
+    <td>Accessibility Support is not a one-size-fits-all solution.  Context figures prominently.  According to WCAG, <a href="https://www.w3.org/WAI/WCAG21/Understanding/conformance#accessibility-support">This is a complex topic and one that varies both by environment and by language</a> as accessed 9 March 2020</td>
+  </tr>		 
+  <tr>
+    <td>Accessibility Supported: WCAG 2.0 Definition</td>
+    <td>Using a technology in a way that is accessibility supported means that it works with assistive technologies (AT) and the accessibility features of operating systems, browsers, and other user agents. Technology features can only be relied upon to conform to WCAG 2.0 success criteria if they are used in a way that is "accessibility supported". Technology features can be used in ways that are not accessibility supported (do not work with assistive technologies, etc.) as long as they are not relied upon to conform to any success criterion (i.e., the same information or functionality is also available another way that is supported). <a href="https://www.w3.org/TR/2008/REC-WCAG20-20081211/#new-terms">Important Terms in WCAG 2.0</a> as accessed 9 March 2020</td>
+  </tr>	 
+  <tr>
+    <td>False Positive Example: Virus Protection</td>
+    <td><a href="/terminology/VirusProtectionFalsePositives.pdf">Virus Protection</a> (pdf)</td>
+  </tr> 
+  <tr>
+    <td>Jargon</td>
+    <td>words used in a particular way by people in a particular field. As defined by WCAG 2.1 in its definition of <a href="https://www.w3.org/TR/WCAG21/#dfn-jargon">jargon</a> as of 9 March 2020</td>
+  </tr>
+  <tr>
+    <td>Unusual Words</td>
+    <td>Success Criterion 3.1.3 Unusual Words (Level AAA): A mechanism is available for identifying specific definitions of words or phrases used in an unusual or restricted way, including idioms and jargon. Success Criterion  <a href="https://www.w3.org/WAI/WCAG21/Understanding/unusual-words">3.1.3</a> as of 9 March 2020</td>
+  </tr>		 
  
-       <div class="container">
-	<div class="row">
-		<div class="col-md-12">
-			<h4>Provisional Guidance for Chemistry Notation Using Nemeth in UEB Contexts</h4>
-			<p tabindex="0" class="quoted">The BANA Chemistry Committee developed this provisional guidance for transcribing chemistry using Nemeth in UEB contexts. BANA welcomes feedback from users of this publication.</p>
-			<p tabindex="0" class="quotedsource">update 05/29/2018</p>
-			<p tabinde="0" class="quotedsource">Braille Authority of North America |  <a href="http://brailleauthority.org/mathscience/math-science.html">Guidance for Transcription Using the Nemeth Code within UEB Contexts </a></p>
-		</div>
-	</div>
-    </div> 
+</table>
+    
+ <!-- source code courtesy W3C schools https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_filter_table -->
+ <script>
+function searchTerminologyFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("terminologyinput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("terminologyTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+	 	 	 
+function searchNotesFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("index2input");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("indexTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
 
     </article>
     </main>	    
@@ -148,7 +196,7 @@
            <div class="container">
               <p tabindex="0">This Page Last Updated or Reviewed</p>
               <ul>
-                  <li>Content:4 March 2020</li>
+                  <li>Content: 9 March 2020</li>
                   <li>WebAim: 22 January 2020</li>
                   <li>Nu Html Checker: TBD</li>
                   <li>Bootstrap 4.3.1</li>
