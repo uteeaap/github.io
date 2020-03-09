@@ -153,14 +153,14 @@ require the University to provide equally effective alternative access. </p>
       <input type="text" id="indexinput" name="indexinput" onkeyup="searchTerminlogyFunction()"  title="Terminology Search"> 
        </div>
       <div class="col-md-6">    
-      <label for="index2input">Search by Colleges or Notes:</label>
+      <label for="index2input">Search by Notes:</label>
       <input type="text" id="index2input" name="index2input" onkeyup="searchNotesFunction()"  title="Notes Search">
   </div>
  <div class="col-md-12">	     
- <table id="indexTable" class="add50">
+ <table id="terminologyTable" class="add50">
   <tr class="header">
     <th style="width:40%;">Terminlogy</th>
-    <th style="width:60%;">Notes</th>	  
+    <th>Notes</th>	  
   </tr>
     <tr>
     <td>Accessibility Support: Level of Assistance</td>
@@ -180,7 +180,7 @@ function searchTerminologyFunction() {
   var input, filter, table, tr, td, i, txtValue;
   input = document.getElementById("indexinput");
   filter = input.value.toUpperCase();
-  table = document.getElementById("indexTable");
+  table = document.getElementById("terminologyTable");
   tr = table.getElementsByTagName("tr");
   for (i = 0; i < tr.length; i++) {
     td = tr[i].getElementsByTagName("td")[0];
