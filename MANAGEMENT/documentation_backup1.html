@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+   <!-- source for script https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Sections_and_Outlines_of_an_HTML5_document -->
+   <!--[if lt IE 9]>
+  <script>
+    document.createElement("header" );
+    document.createElement("footer" );
+    document.createElement("section"); 
+    document.createElement("aside"  );
+    document.createElement("nav"    );
+    document.createElement("article"); 
+    document.createElement("hgroup" ); 
+    document.createElement("time"   );
+  </script>
+  <noscript>
+     <strong>Warning !</strong>
+     Because your browser does not support HTML5, some elements are created using JavaScript.
+     Unfortunately your browser has disabled scripting. Please enable it in order to display this page.
+  </noscript>
+<![endif]-->
+<head>
+  <title>EEAAP Worksheet</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="eeaap, management">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/main.css">
+ </head>
+  
+  <body>
+    <a class="sr-only sr-only-focusable" href="#main">Skip to main content</a>     
+    <nav aria-labelledby="references-navigation">
+     <div class="row"> 
+      <div class="container add25">      
+       <ul class="menu horizontal utility" id="references-navigation">      
+          <li><a href="../index.html">Home</a></li>  
+          <li><a href="../accessboard.html">Access Board</a></li> 
+          <li><a href="../doj.html">DOJ</a></li>
+          <li><a href="../edgov.html">Ed.gov</a></li>  
+          <li><a href="../wai.html">WAI</a></li>
+         </ul>
+      </div><!-- container --> 
+     </div>
+    </nav> 
+   			  
+   <main>
+    <article> 
+	<div class="row darkgray">
+	<div class="container add25">
+	<div class="col text-center" id="main">
+	<h1>Equally Effective Alternate Access</h1>
+	<h2>Management</h2>
+	</div><!-- text-center -->
+	</div><!-- container -->  
+	</div><!-- row --> 
+   <div class="container add25">      
+    <div class="row">
+	  <div class="col-md-6" aria-labelledby="management-navigation">
+	   <nav id="management-navigation">
+	    <button type="button" name="menu" class="btn btn-dark wide300">Menu</button>
+	     <ul class="utilityleft">
+		  <li><a href="index.html">Management Home Page</a></li>
+		  <li><a href="documentation.html">Documentation</a></li>
+		  <li><a href="general.html">General Solutions</a></li>   
+		  <li><a href="resources.html">Resources</a></li> 
+	     </ul>
+	    <p tabindex="0">Updated 8 January 2020</p> 
+	  </nav>
+	</div>
+	<div class="col-md-6">
+	<h3>Harvard Buisness Review</h3>
+		<p tabindex="0" class="quoted">Time after time, we observed that once a manager had decided to make the move and incorporate a blind person into his or her work group, the climate there became a very positive one for the new employee. The failures were always due to factors other than vision limitations, factors that can disrupt any employer-worker relationship. Yet even in those cases, the work group often felt a strong desire to recruit another visually impaired or blind person. They had an investment in the cause.</p>
+		<p tabindex="0" class="quotedsource"><a href="https://hbr.org/1989/03/how-technology-brings-blind-people-into-the-workplace">How Technology Brings Blind People into the Workplace</a> as accessed 8 January 2020</p>
+	 </div>
+     </div><!-- row --> 
+    </div><!-- container -->
+	        
+ <div class="container add25">
+   <div class="row">
+     <div class="col-md-6">
+      <label for="terminologyinput">Search Terminology:</label>
+      <input type="text" id="terminologyinput" name="terminlogyinput" onkeyup="searchTerminologyFunction()"  title="Terminology Search"> 
+       </div>
+      <div class="col-md-6">    
+      <label for="index2input">Search by Notes:</label>
+      <input type="text" id="index2input" name="index2input" onkeyup="searchNotesFunction()"  title="Notes Search">
+  </div>
+ <div class="col-md-12">	     
+ <table id="terminologyTable" class="add50">
+  <tr class="header">
+    <th style="width:40%;">Terminlogy</th>
+    <th style="width:60%;">Notes</th>	  
+  </tr>	 
+  <tr>
+    <td>Accessibility Support: Level of Assistance</td>
+    <td>Accessibility Support is not a one-size-fits-all solution.  Context figures prominently.  According to WCAG, <a href="https://www.w3.org/WAI/WCAG21/Understanding/conformance#accessibility-support">This is a complex topic and one that varies both by environment and by language</a> as accessed 9 March 2020</td>
+  </tr>		 
+  <tr>
+    <td>Accessibility Supported: WCAG 2.0 Definition</td>
+    <td>Using a technology in a way that is accessibility supported means that it works with assistive technologies (AT) and the accessibility features of operating systems, browsers, and other user agents. Technology features can only be relied upon to conform to WCAG 2.0 success criteria if they are used in a way that is "accessibility supported". Technology features can be used in ways that are not accessibility supported (do not work with assistive technologies, etc.) as long as they are not relied upon to conform to any success criterion (i.e., the same information or functionality is also available another way that is supported). <a href="https://www.w3.org/TR/2008/REC-WCAG20-20081211/#new-terms">Important Terms in WCAG 2.0</a> as accessed 9 March 2020</td>
+  </tr>	  
+  <tr>
+    <td>Jargon</td>
+    <td>words used in a particular way by people in a particular field. As defined by WCAG 2.1 in its definition of <a href="https://www.w3.org/TR/WCAG21/#dfn-jargon">jargon</a> as of 9 March 2020</td>
+  </tr>
+   <tr>
+    <td>Spoken Equivalent of the Text</td>
+    <td><a href="https://www.w3.org/WAI/WCAG21/Techniques/general/G79.html">Success Technique G79</a></td>
+  </tr>
+  <tr>
+    <td>Unusual Words</td>
+    <td>Success Criterion 3.1.3 Unusual Words (Level AAA): A mechanism is available for identifying specific definitions of words or phrases used in an unusual or restricted way, including idioms and jargon. Success Criterion  <a href="https://www.w3.org/WAI/WCAG21/Understanding/unusual-words">3.1.3</a> as of 9 March 2020</td>
+  </tr>		 
+</table>
+    
+ <!-- source code courtesy W3C schools https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_filter_table -->
+ <script>
+function searchTerminologyFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("terminologyinput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("terminologyTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}	    
+</script>
+	    
+   </article>
+    </main>	    
+     <footer>
+        <div class="row">
+           <div class="container">
+              <p tabindex="0">This Page Last Updated or Reviewed</p>
+              <ul>
+		<li>Content: 8 January 2020</li>
+		<li>WebAim: TBD</li>
+		<li>Nu Html Checker: TBD</li>
+		<li>Bootstrap 4.3.1</li>
+		<li>Title: EEAAP Worksheet</li>
+		<li>Meta Content: eeaap, management</li>
+		<li>Nav: management-navigation</li>
+		<li>h2: Management</li>      
+		<li>Opening h3:TBD</li>      
+		<li>MathJax AsciiMath config 2.7.4</li>     
+               </ul>
+           </div>
+        </div>    
+     </footer>                                                                
+     
+    <!-- Optional JavaScript -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=AM_CHTML"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+ <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+     
+ </body>   
+</html>
