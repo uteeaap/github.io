@@ -84,6 +84,101 @@
  </div>
 </div>
 	    
+<div class="container">	    
+ <div class="row"> 
+   <div class="col-md-12" style="background-color:#ffffcc;">
+	   <h4>General Problems</h4>
+	   <p tadindex="0">Here's some of the big problems we noted</p>
+	   <h5>Pronunciation of "jargon" is a major problem.</h5>
+	   <p tabindex="0">Screen-readers are not well-equiped to read the math in its intended order of operations, nor pronounce it correctly</p>
+	   <h5>Braille is a solution but also a problem if the teacher does not know Braille</h5>
+	   <p tabindex="0">It's very difficult for the student and teacher to have a timely, two-way conversation if both teacher and student do not know Braille.  There are mercifully some software programs, like Braille Blaster, that help, but it is not the most direct line of communication.</p>
+	 </div>
+	</div>
+    </div>
+	    
+<div class="container add25">
+ <div class="row">
+  <div class="col-md-12">
+   <h4>Teaching Math</h4>
+	<p tabindex="0" class="quoted">"...the <span style="font-weight:bold;">teaching</span> of mathematics at the university and precollege levels. Teaching is not easy to examine in disciplined ways because it is so familiar and seems so obvious.  Although teaching shapes students’ opportunities to learn, what teachers are actually doing is difficult to observe and describe. This impedes work on improving teaching."</p>
+	<p tabindex="0" class="quotedsource"><a href="http://www.msri.org/workshops/793">Critical Issues in Mathematics Education 2016: Observing, Evaluating and Improving Mathematics Teaching from the Early Grades through the University</a></p>
+	 </div>
+     </div><!-- row --> 
+    </div><!-- container -->	    
+	    	    
+<div class="container">	    
+ <div class="row"> 
+   <div class="col-md-12">
+    <h4>Documentation Specific to Math: Advanced Math and Braille</h4>  
+	<p tabindex="0"><span style="font-weight:bold;">How does one go about typesetting math books in braille with all parenthesized subscripts and superscripts and are there braille signs for the amsmath package special symbols?</span></p>
+	<p tabindex="0" class="quoted">I love these resources, and don't want to be complacent, but I think learning Braille by touch rather than by memorizing the pin positions by eyesight and then feeling out the pins might lead to a different experience. But before this one must at least be able to configure their phone or tablet and their braille device properly, and Android doesn't seem to do this yet, which is frustrating . – Jack Maddington Sep 13 '16 at 10:55 </p>
+	<p tabindex="0" class="quotedsource">Stack Exchange Tex <a href="https://tex.stackexchange.com/questions/291116/advanced-math-and-braille">Advanced Math and braille</a></p>
+  </div>
+ </div>
+</div>        
+	        
+ <div class="container add25">
+   <div class="row">
+     <div class="col-md-6">
+      <label for="terminologyinput">Search Terminology:</label>
+      <input type="text" id="terminologyinput" name="terminlogyinput" onkeyup="searchTerminologyFunction()"  title="Terminology Search"> 
+       </div>
+      <div class="col-md-6">    
+      <label for="index2input">Search by Notes:</label>
+      <input type="text" id="index2input" name="index2input" onkeyup="searchNotesFunction()"  title="Notes Search">
+  </div>
+ <div class="col-md-12">	     
+ <table id="terminologyTable" class="add50">
+  <tr class="header">
+    <th style="width:40%;">Terminlogy</th>
+    <th style="width:60%;">Notes</th>	  
+  </tr>	 
+  <tr>
+    <td>Accessibility Support: Level of Assistance</td>
+    <td>Accessibility Support is not a one-size-fits-all solution.  Context figures prominently.  According to WCAG, <a href="https://www.w3.org/WAI/WCAG21/Understanding/conformance#accessibility-support">This is a complex topic and one that varies both by environment and by language</a> as accessed 9 March 2020</td>
+  </tr>		 
+  <tr>
+    <td>Accessibility Supported: WCAG 2.0 Definition</td>
+    <td>Using a technology in a way that is accessibility supported means that it works with assistive technologies (AT) and the accessibility features of operating systems, browsers, and other user agents. Technology features can only be relied upon to conform to WCAG 2.0 success criteria if they are used in a way that is "accessibility supported". Technology features can be used in ways that are not accessibility supported (do not work with assistive technologies, etc.) as long as they are not relied upon to conform to any success criterion (i.e., the same information or functionality is also available another way that is supported). <a href="https://www.w3.org/TR/2008/REC-WCAG20-20081211/#new-terms">Important Terms in WCAG 2.0</a> as accessed 9 March 2020</td>
+  </tr>	  
+  <tr>
+    <td>Jargon</td>
+    <td>words used in a particular way by people in a particular field. As defined by WCAG 2.1 in its definition of <a href="https://www.w3.org/TR/WCAG21/#dfn-jargon">jargon</a> as of 9 March 2020</td>
+  </tr>
+   <tr>
+    <td>Spoken Equivalent of the Text</td>
+    <td><a href="https://www.w3.org/WAI/WCAG21/Techniques/general/G79.html">Success Technique G79</a></td>
+  </tr>
+  <tr>
+    <td>Unusual Words</td>
+    <td>Success Criterion 3.1.3 Unusual Words (Level AAA): A mechanism is available for identifying specific definitions of words or phrases used in an unusual or restricted way, including idioms and jargon. Success Criterion  <a href="https://www.w3.org/WAI/WCAG21/Understanding/unusual-words">3.1.3</a> as of 9 March 2020</td>
+  </tr>		 
+</table>
+    
+ <!-- source code courtesy W3C schools https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_filter_table -->
+ <script>
+function searchTerminologyFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("terminologyinput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("terminologyTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}	    
+	    
+	    
+	    
 	    
    </article>
     </main>	    
